@@ -1,0 +1,21 @@
+name "std"
+version "1.0"
+
+typekit do
+    Typelib::Registry.add_standard_cxx_types(registry)
+    if type_export_policy == :used
+        # We assume that, if the caller wants a 'used' type policy, it means he
+        # wants partial exports. Move to 'selected'. oroGen would have changed
+        # it to 'all'
+        type_export_policy :selected
+    end
+
+    export_types '/bool'
+    [2, 4, 8].each do |int_size|
+        export_types "/int#{int_size * 8}_t"
+        export_types "/uint#{int_size * 8}_t"
+    end
+    export_types "/float"
+    export_types "/double"
+    export_types "/std/string"
+end
