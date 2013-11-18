@@ -1,6 +1,9 @@
 name "std"
 version "1.0"
 
+using_library "orogen_metadata"
+import_types_from "orogen_metadata/Metadata.hpp"
+
 typekit do
     Typelib::Registry.add_standard_cxx_types(registry)
     if type_export_policy == :used
@@ -18,4 +21,5 @@ typekit do
     export_types "/float"
     export_types "/double"
     export_types "/std/string"
+    export_types "metadata/Component"
 end
