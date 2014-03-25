@@ -9,4 +9,5 @@
 
   <depend package="orogen" />
   <depend package="tools/orogen_metadata" />
+  <tags>stable</tags>
 </package>
