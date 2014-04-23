@@ -15,6 +15,10 @@ typekit do
 
     export_types '/bool'
     [1, 2, 4, 8].each do |int_size|
+        registry.get("/int#{int_size * 8}_t").
+            metadata.set("orogen_include", "boost/cstdint.hpp")
+        registry.get("/uint#{int_size * 8}_t").
+            metadata.set("orogen_include", "boost/cstdint.hpp")
         export_types "/int#{int_size * 8}_t"
         export_types "/uint#{int_size * 8}_t"
     end
