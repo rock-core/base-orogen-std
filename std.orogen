@@ -25,5 +25,7 @@ typekit do
     export_types "/float"
     export_types "/double"
     export_types "/std/string"
+    # Yes, RTT has std::vector<double>, so we need to do the same. Thanks guys.
+    export_types "/std/vector</double>"
     export_types "metadata/Component"
 end
