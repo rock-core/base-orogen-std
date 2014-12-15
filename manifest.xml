@@ -8,6 +8,5 @@
   <logo>http://</logo>
 
   <depend package="orogen" />
-  <depend package="tools/orogen_metadata" optional="1"/>
   <tags>stable</tags>
 </package>

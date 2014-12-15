@@ -26,10 +26,3 @@ typekit do
     export_types "/std/vector</double>"
 end
 
-begin
-    using_library "orogen_metadata"
-    import_types_from "orogen_metadata/Metadata.hpp"
-    export_types "metadata/Component"
-rescue Orocos::TypekitNotFound
-end
-
