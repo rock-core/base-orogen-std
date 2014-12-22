@@ -6,6 +6,7 @@ import_types_from "orogen_metadata/Metadata.hpp"
 
 typekit do
     Typelib::Registry.add_standard_cxx_types(registry)
+    resolve_registry_includes(registry, Array.new)
     if type_export_policy == :used
         # We assume that, if the caller wants a 'used' type policy, it means he
         # wants partial exports. Move to 'selected'. oroGen would have changed
