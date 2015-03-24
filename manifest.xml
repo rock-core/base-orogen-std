@@ -1,11 +1,12 @@
 <package>
-  <description brief="Typekit for standard types">
-  
+  <description brief="Rock typekit for standard types">
+  This orogen project is meant to define the necessary information to use standard types inside
+  a Rock system
   </description>
-  <author>/</author>
-  <license></license>
-  <url>http://</url>
-  <logo>http://</logo>
+  
+  <maintainer>Sylvain Joyeux/sylvain.joyeux@m4x.org</maintainer>
+  <license>LGPLv2 or later</license>
+  <url>http://rock-robotics.org</url>
 
   <depend package="orogen" />
   <depend package="tools/orogen_metadata" />
