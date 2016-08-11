@@ -1,9 +1,6 @@
 name "std"
 version "1.0"
 
-using_library "orogen_metadata"
-import_types_from "orogen_metadata/Metadata.hpp"
-
 typekit do
     Typelib::Registry.add_standard_cxx_types(registry)
     resolve_registry_includes(registry, Array.new)
@@ -28,5 +25,4 @@ typekit do
     export_types "/std/string"
     # Yes, RTT has std::vector<double>, so we need to do the same. Thanks guys.
     export_types "/std/vector</double>"
-    export_types "/metadata/TaskContext"
 end

@@ -9,6 +9,5 @@
   <url>http://rock-robotics.org</url>
 
   <depend package="orogen" />
-  <depend package="tools/orogen_metadata" />
   <tags>stable</tags>
 </package>
