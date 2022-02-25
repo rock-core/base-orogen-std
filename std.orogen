@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 name "std"
 version "1.0"
 
@@ -6,7 +8,6 @@ import_types_from "orogen_metadata/Metadata.hpp"
 
 typekit do
     Typelib::Registry.add_standard_cxx_types(registry)
-    resolve_registry_includes(registry, Array.new)
     if type_export_policy == :used
         # We assume that, if the caller wants a 'used' type policy, it means he
         # wants partial exports. Move to 'selected'. oroGen would have changed
@@ -14,7 +15,11 @@ typekit do
         type_export_policy :selected
     end
 
-    export_types '/bool'
+    export_types "/bool"
+    char8 = registry.get("/char8_t")
+    char8.metadata.set("orogen_include", "")
+    char8.metadata.set("cxxname", "char")
+    export_types "/char8_t"
     [1, 2, 4, 8].each do |int_size|
         registry.get("/int#{int_size * 8}_t").
             metadata.set("orogen_include", "boost/cstdint.hpp")
@@ -23,6 +28,7 @@ typekit do
         export_types "/int#{int_size * 8}_t"
         export_types "/uint#{int_size * 8}_t"
     end
+    resolve_registry_includes(registry, [])
     export_types "/float"
     export_types "/double"
     export_types "/std/string"
